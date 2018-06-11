@@ -10,7 +10,7 @@ class NavBar extends Component {
         </div>
 
         <div>
-          <a href="https://github.com/">Github</a>
+          <a href="https://github.com/">GitHub</a>
           <a href="/">Sign In</a>
         </div>
       </nav>

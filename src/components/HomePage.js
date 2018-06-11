@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { SearchBar } from './SearchBar';
+import { Results } from './Results';
 
+/*Holds all the compoonents except NavBar*/ 
 class HomePage extends Component {
   render(){
     return(
-      <h1>homepage</h1>
+      <div className='HomePage'>
+        <div className='logo'>GitHub</div>
+        <SearchBar />
+        <Results />
+      </div>
     );
   }
 }

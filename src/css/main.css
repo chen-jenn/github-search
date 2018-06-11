@@ -4,30 +4,26 @@ body {
   font-family: sans-serif;
 }
 
-.NavBar {
+.HomePage {
+  width: 70vw;
+  height: calc(100vh - 50px);
+  margin: auto;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.logo {
+  /*positioning*/
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-  width: 100vw;
-  height: 50px;
-  background-color: #292c32;
-  color: white;
-  font-weight: bold; 
+  font-size: 75px;
+  font-family: monospace;
+  font-weight: bold;
+  color: #414141;
 }
 
-.NavBar a {
-  text-decoration: none;
-  color: #d2d2d2;
-  font-size: 16px;
-  padding: 16px;
-  line-height: 50px;
-}
-
-.NavBar a:hover {
-  color: white;
-}
-
-.NavBar > * {
-  width: 10%;
-  height: 100%;
+.SearchBar {
+  display:flex;
+  justify-content: center;
 }
