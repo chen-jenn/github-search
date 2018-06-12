@@ -18,25 +18,29 @@ class Results extends Component {
 
   componentDidMount() {
     fetch(`https://api.github.com/users/chen-jenn`)
-      .then(response => response.json())
-      .then(
-        (result) => {
-          let repos = fetch(`${result.repos_url}`).then(res => res.json())
-          this.setState({
-            isLoaded: true,
-            fullName: result.name,
-            username: result.login,
-            location: result.location,
-            reposUrl: result.repos_url,
-            repos: repos
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
+      .then((response) => response.json())
+      .then((result) => {
+        function repoFetch(){
+          fetch(`${result.repos_url}`)
+            .then(res => res.json())
+            .then(result => {console.log(result)})
         }
+
+        this.setState({
+          isLoaded: true,
+          fullName: result.name,
+          username: result.login,
+          location: result.location,
+          reposUrl: result.repos_url,
+          repos: repoFetch()
+        });
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
       )
   }
 

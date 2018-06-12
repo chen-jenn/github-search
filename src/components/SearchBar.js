@@ -8,6 +8,18 @@ class SearchBar extends Component {
       name: 'name',
       type: 'text'
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    console.log('Clicked the button');
+  }
+
+  handleLucky(event){
+    event.preventDefault();
+    console.log('Clicked lucky')
   }
 
   render(){
@@ -15,9 +27,13 @@ class SearchBar extends Component {
       <div className='SearchBar'>
         <form>
           <input
-            placeholder={this.state.placeholder}></input><br></br>
-          <button type="submit">GitHub Search</button>
-          <button type="submit">I'm Feeling Lucky</button>
+            placeholder={this.state.placeholder}>
+          </input><br></br>
+
+          <div className='buttons-box'>
+            <button type="submit" onClick={this.handleSubmit} style={{marginRight:'2.5px'}}>GitHub Search</button>
+            <button type="submit" onClick={this.handleLucky} style={{marginLeft:'2.5px'}}>I'm Feeling Lucky</button>
+          </div>
         </form>
       </div>
     );
