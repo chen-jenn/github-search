@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SearchBar } from './SearchBar';
 import { Results } from './Results';
 
-/*Holds all the compoonents except NavBar*/ 
+/*Holds all the components except NavBar*/
 class HomePage extends Component {
   render(){
     return(

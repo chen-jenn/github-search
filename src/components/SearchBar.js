@@ -4,9 +4,10 @@ class SearchBar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      placeholder: 'Search..',
+      placeholder: 'Find a user..',
       name: 'name',
-      type: 'text'
+      type: 'text',
+      value: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -14,27 +15,28 @@ class SearchBar extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log('Clicked the button');
-  }
-
-  handleLucky(event){
-    event.preventDefault();
-    console.log('Clicked lucky')
+    // console.log('Clicked the button');
+    this.setState({value: this.element.value})
   }
 
   render(){
     return(
       <div className='SearchBar'>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input
-            placeholder={this.state.placeholder}>
+            placeholder={this.state.placeholder}
+            type={this.state.type}
+            ref={el => this.element = el}
+            >
           </input><br></br>
 
           <div className='buttons-box'>
-            <button type="submit" onClick={this.handleSubmit} style={{marginRight:'2.5px'}}>GitHub Search</button>
-            <button type="submit" onClick={this.handleLucky} style={{marginLeft:'2.5px'}}>I'm Feeling Lucky</button>
+            {/* right now both buttons do the same thing, it is more just for show */}
+            <button type="submit" style={{marginRight:'2.5px'}}>GitHub Search</button>
+            <button type="submit" style={{marginLeft:'2.5px'}}>I'm Feeling Lucky</button>
           </div>
         </form>
+        {console.log(this.state.value)}
       </div>
     );
   }
