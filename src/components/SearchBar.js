@@ -56,24 +56,24 @@ class SearchBar extends Component {
 
   render(){
     return(
-        <div className='SearchBar'>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              placeholder={this.state.placeholder}
-              type='text'
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-            <br></br>
+      <div className='SearchBar'>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            placeholder={this.state.placeholder}
+            type='text'
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+          <br></br>
 
-            <div className='buttons-box'>
-              {/* right now both buttons do the same thing, it is more just for show */}
-              <button type="submit" style={{marginRight:'2.5px'}}>GitHub Search</button>
-              <button type="submit" style={{marginLeft:'2.5px'}}>I'm Feeling Lucky</button>
-            </div>
-          </form>
-          <Results searchResults={this.state}/>
-        </div>
+          <div className='buttons-box'>
+            {/* right now both buttons do the same thing, it is more just for show */}
+            <button type="submit" style={{marginRight:'2.5px'}}>GitHub Search</button>
+            <button type="submit" style={{marginLeft:'2.5px'}}>I'm Feeling Lucky</button>
+          </div>
+        </form>
+        <Results searchResults={this.state}/>
+      </div>
     );
   }
 }

@@ -25,12 +25,14 @@ body {
 
 .SearchBar {
   display:flex;
+  flex-direction: column;
   justify-content: center;
   padding: 15px;
 }
 
 .SearchBar form {
   width: 75%;
+  margin: auto;
 }
 
 .SearchBar form input {
@@ -40,7 +42,7 @@ body {
   font-size: 20px;
 }
 
-.buttons-box { 
+.buttons-box {
   text-align: center;
 }
 
@@ -54,4 +56,12 @@ button:hover {
   background-color: slategray;
   color: white;
   cursor: pointer;
+}
+
+.Results {
+  height: 500px; /*remove later*/
+  width: 100%;
+  margin-top: 20px;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
