@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { SearchBar } from './SearchBar';
-import { Results } from './Results';
 
 /*Holds all the components except NavBar*/
 class HomePage extends Component {
@@ -9,7 +8,6 @@ class HomePage extends Component {
       <div className='HomePage'>
         <div className='logo'>GitHub</div>
         <SearchBar />
-        <Results />
       </div>
     );
   }
