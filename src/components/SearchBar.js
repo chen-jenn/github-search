@@ -30,9 +30,12 @@ class SearchBar extends Component {
       .then((response) => response.json())
       .then((result) => {
         function repoFetch(){
-          fetch(`${result.repos_url}`)
-          .then(res => res.json())
-          .then(result => {console.log(result)})
+          const repos = fetch(`${result.repos_url}`)
+            .then(res => res.json())
+            .then(result => {
+              return result
+            })
+          return repos;
         }
 
         this.setState({
@@ -41,8 +44,7 @@ class SearchBar extends Component {
           username: result.login,
           location: result.location,
           reposUrl: result.repos_url,
-          // if there is an existing user, then can call the second fetch function
-          repos: result.message !== 'Not Found' ? repoFetch() : 'not fetched repo'
+          repos: repoFetch()
         });
       },
       (error) => {

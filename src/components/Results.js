@@ -2,8 +2,8 @@ import React from 'react';
 
 // Display profile name, user name, location, and top 5 repos
 export function Results(props){
-  const results = props.searchResults
-  // const userRepos = results.repos.map(repo => repo.id)
+  const results = props.searchResults;
+  const userRepos = results.repos;
 
   if (results.isLoaded === true && results.username !== undefined){
     return(
@@ -15,7 +15,13 @@ export function Results(props){
         <hr></hr>
 
         <h2>Top Repositories</h2>
-        {/* <p>{userRepos}</p> */}
+        {/* Have the promise.then() here instead of in the parent componennt since userRepos is still technically a promise */}
+        <div>{console.log(userRepos
+          .then((results) =>
+            {results.map((repo) => {
+              console.log(repo.name)
+            })}
+          ))}</div>
       </div>
     );
   } else if (results.username === undefined){
